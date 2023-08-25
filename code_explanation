@@ -1,0 +1,27 @@
+This code generates and analyzes two types of networks: Erdös-Rényi (ER) networks and Watts-Strogatz (WS) networks.
+
+### Generating ER Networks
+1. The function `generate_ER_network(N, p)` creates an Erdös-Rényi network with `N` nodes and edge probability `p`.
+2. A dictionary called `ER_networks` is created to store ER networks with different sizes and edge probabilities.
+
+### Plotting ER Networks
+1. The function `plot_network(network, title)` takes a network dictionary and title as inputs, converts the dictionary into a NetworkX graph, and visualizes the graph using `nx.draw()`.
+2. The function `plot_degree_distribution(network, title)` computes the degree distribution of a network and plots the degree vs. frequency on a log-log scale.
+3. For each ER network in the `ER_networks` dictionary, it plots the network graph if the size is less than or equal to 100 nodes and plots the degree distribution graph if the size is greater than or equal to 1000 nodes.
+
+### Saving ER Networks
+1. The function `save_network_to_file(network, filename)` saves the network information to a file with the given filename.
+2. For the ER network `N50_p0.06`, this function is called several times to save the network information in different file formats.
+
+### Generating WS Networks
+1. The function `generate_WS_network(N, k, p)` generates a Watts-Strogatz network with `N` nodes, each connected to `k` nearest neighbors, and edge rewiring probability `p`.
+2. A dictionary called `WS_networks` is created to store WS networks with different sizes, `k` values, and edge rewiring probabilities.
+
+### Plotting WS Networks
+1. Similar to ER networks, the code plots WS network graphs and degree distributions for networks with various parameters.
+
+### Saving WS Networks
+1. The function `save_all_networks(networks_dict, prefix)` iterates over the dictionary of network types and calls `save_network_to_file()` to save each network to a file.
+2. It is used to save both ER and WS networks with appropriate prefixes.
+
+In summary, this code generates Erdös-Rényi and Watts-Strogatz networks, plots their graphs and degree distributions, and saves their network information to files for further analysis.
